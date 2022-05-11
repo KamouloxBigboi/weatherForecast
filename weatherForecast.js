@@ -43,10 +43,26 @@ document.addEventListener("DOMContentLoaded", function() {
             })
             .then(data2 => {
                 let result2 = data2.weather[0].id
-                document.getElementById("result").innerHTML = result2;
-            })
-            .catch(err => console.log(err))
-            })
+                console.log(result2)
+                let el = document.getElementById("result");
+                
+                if (result2 == 800) {
+                    el.innerHTML = "<img src=\"./icons/sun.svg\" width=\"400px\" height=\"150px\">";
+                }
+                if (result2 == 600) {
+                    el.innerHTML = "<img src=\"./icons/snow.svg\" width=\"400px\" height=\"150px\">";
+                }
+                if (result2 == 801) {
+                    el.innerHTML = "<img src=\"./icons/cloudy.svg\" width=\"400px\" height=\"150px\">";
+                }
+                if (result2 == 803) {
+                    el.innerHTML = "<img src=\"./icons/clouds.svg\" width=\"400px\" height=\"150px\">";
+                }
+                if (result2 == 500) {
+                    el.innerHTML = "<img src=\"./icons/rain.svg\" width=\"400px\" height=\"150px\">";
+                }
+            });
+        })
         .catch(err => console.log(err))
     });
 });
