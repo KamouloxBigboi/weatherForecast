@@ -14,7 +14,7 @@ form {
 
     padding: auto;
     display: inline-flex;
-    gap: 150px;
+    gap: 115px;
 
 }
 #displayResult {
@@ -28,6 +28,6 @@ form {
 #result{
     
     display: inline-flex;
-    gap: 8px
+    padding-top: 60px;
 }
 

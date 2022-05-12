@@ -64,12 +64,12 @@ document.addEventListener("DOMContentLoaded", function() {
                             else if (newResult >= 600 && newResult <= 631) {
                                 el.appendChild(element2).innerHTML = "<img src=\"./icons/snow.svg\" width=\"200px\" height=\"75px\">";
                         }
-                            else if (newResult == 801 && newResult == 802) {
+                            else if (newResult > 800 ) {
                                 el.appendChild(element2).innerHTML = "<img src=\"./icons/cloudy.svg\" width=\"200px\" height=\"75px\">";
                         }
-                            else if (newResult == 801 && newResult == 802) {
-                                el.appendChild(element2).innerHTML = "<img src=\"./icons/clouds.svg\" width=\"200px\" height=\"75px\">";
-                        }
+                        //     else if (newResult == 803 && newResult == 804) {
+                        //         el.appendChild(element2).innerHTML = "<img src=\"./icons/clouds.svg\" width=\"200px\" height=\"75px\">";
+                        // }
                             else if ( newResult >= 500 && newResult <= 531) {
                                 el.appendChild(element2).innerHTML = "<img src=\"./icons/rain.svg\" width=\"200px\" height=\"75px\">";
                         }
