@@ -1,12 +1,16 @@
 document.addEventListener("DOMContentLoaded", function() {
 
+    // Créer input et bouton
+
     let input = document.getElementById('search').value;
     let buttonClick = document.getElementById('search_button');
+
+    // Créer l'event qui suit le click sur le bouton
 
     buttonClick.addEventListener('click', function(event) {
 
         event.preventDefault();
-
+        
         const API_KEY = "c46400a6732a496faadf147afdbd17f8"
 
         let URL = `https://api.opencagedata.com/geocode/v1/json?q=${input}&key=${API_KEY}&language=fr&pretty=1`
@@ -31,7 +35,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
             const API_KEY_2 = "c512e8d95b8c68fbc1f680cf5953680f"
 
-            let URL2 = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY_2}`
+
+            let URL2 = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely&appid=${API_KEY_2}`
 
             fetch(URL2)
 
@@ -41,28 +46,52 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
                 else console.log(`Erreur lorsqu'on a tenté de récupérer les data d'OpenWheatherMap`);
             })
-            .then(data2 => {
-                let result2 = data2.weather[0].id
-                console.log(result2)
-                let el = document.getElementById("result");
+                .then(data2 => {
                 
-                if (result2 == 800) {
-                    el.innerHTML = "<img src=\"./icons/sun.svg\" width=\"400px\" height=\"150px\">";
-                }
-                if (result2 == 600) {
-                    el.innerHTML = "<img src=\"./icons/snow.svg\" width=\"400px\" height=\"150px\">";
-                }
-                if (result2 == 801) {
-                    el.innerHTML = "<img src=\"./icons/cloudy.svg\" width=\"400px\" height=\"150px\">";
-                }
-                if (result2 == 803) {
-                    el.innerHTML = "<img src=\"./icons/clouds.svg\" width=\"400px\" height=\"150px\">";
-                }
-                if (result2 == 500) {
-                    el.innerHTML = "<img src=\"./icons/rain.svg\" width=\"400px\" height=\"150px\">";
-                }
-            });
-        })
+                    console.log(data2)
+                    
+                    for(i=0; i<5; i++) {
+
+                        let newResult = data2.daily[i].weather[0].id;
+                        console.log(newResult)
+
+                        let el = document.getElementById("result");
+
+                        if ( newResult == 800) {
+                            el.innerHTML = "<img src=\"./icons/sun.svg\" width=\"400px\" height=\"150px\">";
+                        }
+                            else if (newResult == 600) {
+                                el.innerHTML = "<img src=\"./icons/snow.svg\" width=\"400px\" height=\"150px\">";
+                        }
+                            else if (newResult == 801) {
+                                el.innerHTML = "<img src=\"./icons/cloudy.svg\" width=\"400px\" height=\"150px\">";
+                        }
+                            else if (newResult == 803) {
+                                el.innerHTML = "<img src=\"./icons/clouds.svg\" width=\"400px\" height=\"150px\">";
+                        }
+                            else if (newResult == 500) {
+                                el.innerHTML = "<img src=\"./icons/rain.svg\" width=\"400px\" height=\"150px\">";
+                        }
+
+                    // Déclarer et Récupérer Date du jour
+
+                        const myDate = new Date();
+                        const curr_day = myDate.getDay();
+                        let week = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche", "Lundi", "Mercredi", "Vendredi", "Samedi", "Dimanche"];
+                        console.log(week[curr_day]);
+
+                    // Afficher 4 jours
+
+                        let day = week[curr_day + i];
+                        let element = document.createElement("h3");
+                        let newDiv = document.getElementById("day");
+                        newDiv.appendChild(element).innerHTML = `${day}`;
+                        console.log(day);
+                    
+                        // Afficher icône météo en fonction de l'I
+                    }
+                });
+            })
         .catch(err => console.log(err))
     });
 });
