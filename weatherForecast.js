@@ -56,29 +56,29 @@ document.addEventListener("DOMContentLoaded", function() {
                         console.log(newResult)
 
                         let el = document.getElementById("result");
+                        let element2 = document.createElement("div");
 
                         if ( newResult == 800) {
-                            el.innerHTML = "<img src=\"./icons/sun.svg\" width=\"400px\" height=\"150px\">";
+                            el.appendChild(element2).innerHTML = "<img src=\"./icons/sun.svg\" width=\"200px\" height=\"75px\">";
                         }
-                            else if (newResult == 600) {
-                                el.innerHTML = "<img src=\"./icons/snow.svg\" width=\"400px\" height=\"150px\">";
+                            else if (newResult >= 600 && newResult <= 631) {
+                                el.appendChild(element2).innerHTML = "<img src=\"./icons/snow.svg\" width=\"200px\" height=\"75px\">";
                         }
-                            else if (newResult == 801) {
-                                el.innerHTML = "<img src=\"./icons/cloudy.svg\" width=\"400px\" height=\"150px\">";
+                            else if (newResult == 801 && newResult == 802) {
+                                el.appendChild(element2).innerHTML = "<img src=\"./icons/cloudy.svg\" width=\"200px\" height=\"75px\">";
                         }
-                            else if (newResult == 803) {
-                                el.innerHTML = "<img src=\"./icons/clouds.svg\" width=\"400px\" height=\"150px\">";
+                            else if (newResult == 801 && newResult == 802) {
+                                el.appendChild(element2).innerHTML = "<img src=\"./icons/clouds.svg\" width=\"200px\" height=\"75px\">";
                         }
-                            else if (newResult == 500) {
-                                el.innerHTML = "<img src=\"./icons/rain.svg\" width=\"400px\" height=\"150px\">";
+                            else if ( newResult >= 500 && newResult <= 531) {
+                                el.appendChild(element2).innerHTML = "<img src=\"./icons/rain.svg\" width=\"200px\" height=\"75px\">";
                         }
 
-                    // Déclarer et Récupérer Date du jour
+                    //Déclarer et Récupérer Date du jour
 
                         const myDate = new Date();
                         const curr_day = myDate.getDay();
                         let week = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche", "Lundi", "Mercredi", "Vendredi", "Samedi", "Dimanche"];
-                        console.log(week[curr_day]);
 
                     // Afficher 4 jours
 

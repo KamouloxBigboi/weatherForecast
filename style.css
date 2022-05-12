@@ -27,6 +27,7 @@ form {
 }
 #result{
     
-    padding-left: 20px ;
+    display: inline-flex;
+    gap: 8px
 }
 
