@@ -1,5 +1,6 @@
 body {
-    background-color: #ffe4c4;
+    background-image: url('./background/background_weaterForecast.jpg');
+    background-size: cover;
     margin: auto;
     text-align: center;
     font-size: large;
@@ -9,7 +10,13 @@ body {
 form {
     display: flex;
     justify-content: center;
+    font-style: bold;
     padding-top: 100px;
+}
+
+#selector {
+
+    margin-bottom:  15px;
 }
 #day {
 

@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let input = document.getElementById('search').value;
     let buttonClick = document.getElementById('search_button');
+    let selectDays = document.getElementById('selectDays');
+    let nDays = selectDays.options[selectDays.selectedIndex].value
+    console.log(nDays)
 
     // Créer l'event qui suit le click sur le bouton
 
@@ -49,8 +52,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 .then(data2 => {
                 
                     console.log(data2)
+
+                    let selectDays = document.getElementById('selectDays');
+                    let nDays = selectDays.options[selectDays.selectedIndex].value
+                    console.log(nDays)
                     
-                    for(i=0; i<5; i++) {
+                    for(i=0; i<nDays; i++) {
 
                         let newResult = data2.daily[i].weather[0].id;
                         console.log(newResult)
