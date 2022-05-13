@@ -5,7 +5,10 @@ p {
 select, input {
 
     text-align: center;
+input::placeholder {
 
+    color
+}
 }
 body {
     background-image: url('./background/background_weaterForecast.jpg');
@@ -32,13 +35,18 @@ form {
 }
 #day {
 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     padding: auto;
-    display: inline-flex;
     gap: 115px;
 
 }
 #displayResult {
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding-top: 50px;
     font-size: large;
     font-style: italic;
@@ -46,8 +54,9 @@ form {
 
 }
 #result{
-
-    display: inline-flex;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     padding-top: 60px;
 }
 
