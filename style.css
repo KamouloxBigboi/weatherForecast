@@ -5,11 +5,13 @@ p {
 select, input {
 
     text-align: center;
+}
+
 input::placeholder {
 
-    color
+    color: red;
 }
-}
+
 body {
     background-image: url('./background/background_weaterForecast.jpg');
     background-size: cover;
