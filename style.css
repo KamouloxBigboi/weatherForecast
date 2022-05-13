@@ -1,8 +1,20 @@
+p {
+    font-size: small;
+    font-style: italic;
+}
+select, input {
+
+    text-align: center;
+
+}
 body {
     background-image: url('./background/background_weaterForecast.jpg');
     background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     margin: auto;
-    text-align: center;
+    text-align: center;     
     font-size: large;
     font-family: Arial, Helvetica, sans-serif;
     font-style: italic;
@@ -10,8 +22,8 @@ body {
 form {
     display: flex;
     justify-content: center;
-    font-style: bold;
-    padding-top: 100px;
+    font-style:initial;
+    padding-top: 60px;
 }
 
 #selector {
@@ -27,7 +39,7 @@ form {
 }
 #displayResult {
     
-    padding-top: 80px;
+    padding-top: 50px;
     font-size: large;
     font-style: italic;
     font-family: Arial, Helvetica, sans-serif;
