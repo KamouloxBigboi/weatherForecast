@@ -38,7 +38,7 @@ form {
 
 }
 #displayResult {
-    
+
     padding-top: 50px;
     font-size: large;
     font-style: italic;
@@ -46,7 +46,7 @@ form {
 
 }
 #result{
-    
+
     display: inline-flex;
     padding-top: 60px;
 }

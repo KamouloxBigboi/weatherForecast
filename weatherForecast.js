@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     return response2.json() 
                 }
                 else console.log(`Erreur lorsqu'on a tenté de récupérer les data d'OpenWheatherMap`);
-            })
+                })
                 .then(data2 => {
                 
                     console.log(data2)
@@ -61,6 +61,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
                         let newResult = data2.daily[i].weather[0].id;
                         console.log(newResult)
+                        
+                        //////////// Changer background et font si jour ou nuit //////////////
+                        
+                        let uv = data2.current.uvi;
+                        console.log(uv);
+
+                        if(uv == 0) {
+                            
+                            document.body.style.backgroundImage ="url('./background/background_night.jpg')"
+                            document.getElementById("day").style.color = "#ffffff";
+                            
+                        }
+                        
+                        //////////////// Changer icone meteo en fct de l'id /////////////////////
 
                         let el = document.getElementById("result");
                         let element2 = document.createElement("div");
@@ -81,21 +95,19 @@ document.addEventListener("DOMContentLoaded", function() {
                                 el.appendChild(element2).innerHTML = "<img src=\"./icons/rain.svg\" width=\"200px\" height=\"75px\">";
                         }
 
-                    //Déclarer et Récupérer Date du jour
+                    //////////////////// Déclarer et Récupérer date du jour ///////////////////
 
                         const myDate = new Date();
                         const curr_day = myDate.getDay();
                         let week = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche", "Lundi", "Mercredi", "Vendredi", "Samedi", "Dimanche"];
 
-                    // Afficher 4 jours
+                    ///////////////////// Afficher jours suivants  //////////////////////////////
 
                         let day = week[curr_day + i];
                         let element = document.createElement("h3");
                         let newDiv = document.getElementById("day");
                         newDiv.appendChild(element).innerHTML = `${day}`;
                         console.log(day);
-                    
-                        // Afficher icône météo en fonction de l'I
                     }
                 });
             })
